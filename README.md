@@ -1,5 +1,20 @@
 # CS4300-CSP v1 — Tiny CSP Format + Starter Code
 
+## How to Run
+
+```bash
+# No heuristic (default order)
+python3 run_csp.py 9X9_sudoku_easy.csp
+
+# With MRV heuristic
+python3 run_csp.py 9X9_sudoku_easy.csp MVR
+
+# With MRV + Degree heuristic  
+python3 run_csp.py 9X9_sudoku_easy.csp MVR+
+```
+
+
+
 This bundle gives students a tiny, readable CSP problem format and a ready-to-use parser and solver so they can focus on **modeling** and **search**.
 
 ## Contents

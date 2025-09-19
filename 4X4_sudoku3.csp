@@ -1,0 +1,54 @@
+NAME: Sudoku
+DESC: Solve board to get a number in every spot without have a duplicate number in any row,column and boxes. 
+
+VARS:
+  r1c1: [1,2,3,4]
+  r1c2: [1,2,3,4]
+  r1c3: [1,2,3,4]
+  r1c4: [1,2,3,4]
+  r2c1: [1,2,3,4]
+  r2c2: [1,2,3,4]
+  r2c3: [1,2,3,4]
+  r2c4: [1,2,3,4]
+  r3c1: [1,2,3,4]
+  r3c2: [1,2,3,4]
+  r3c3: [1,2,3,4]
+  r3c4: [1,2,3,4]
+  r4c1: [1,2,3,4]
+  r4c2: [1,2,3,4]
+  r4c3: [1,2,3,4]
+  r4c4: [1,2,3,4]
+
+
+
+CONS:
+  # Board1
+  in(r1c2,[3])
+  in(r1c3,[4])
+  in(r3c1,[3])
+  in(r3c4,[2])
+
+
+
+  # box constraints
+  alldiff(r1c1,r1c2,r2c1,r2c2)  # top-left box
+  alldiff(r1c3,r1c4,r2c3,r2c4)  # top-right box
+  alldiff(r3c1,r3c2,r4c1,r4c2)  # bottom-left box
+  alldiff(r3c3,r3c4,r4c3,r4c4)  # bottom-right box
+
+  # Column constraints
+  alldiff(r1c1,r2c1,r3c1,r4c1) #column 1
+  alldiff(r1c2,r2c2,r3c2,r4c2) #column 2
+  alldiff(r1c3,r2c3,r3c3,r4c3) #column 3
+  alldiff(r1c4,r2c4,r3c4,r4c4) #column 4
+
+  # Row constraints
+  alldiff(r1c1,r1c2,r1c3,r1c4) #row 1
+  alldiff(r2c1,r2c2,r2c3,r2c4) #row 2
+  alldiff(r3c1,r3c2,r3c3,r3c4) #row 3
+  alldiff(r4c1,r4c2,r4c3,r4c4) #row4
+  
+
+
+
+
